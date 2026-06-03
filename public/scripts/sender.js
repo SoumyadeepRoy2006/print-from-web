@@ -1,6 +1,6 @@
 var connected = false;
 var receiverConnected = false;
-const server = new WebSocket(`ws://${location.host}/`);
+const server = new WebSocket(`wss://${location.host}/`);
 server.binaryType = "arraybuffer";
 const binaryReadSize = 128 * 1024;
 var sending = false;

@@ -1,6 +1,6 @@
 var connected = false;
 var receiving = false;
-const server = new WebSocket(`ws://${location.host}`);
+const server = new WebSocket(`wss://${location.host}`);
 var fileParts = [];
 server.binaryType = "arraybuffer";
 

@@ -143,4 +143,4 @@ WSServer.on("connection", (client) => {
       console.log("Client disconnected");
    });
 });
-server.Start(2000);
+server.Start();
