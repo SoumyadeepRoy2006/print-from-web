@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/styles/style.css">
+   <link rel="stylesheet" href="/styles/sender.css">
+   <script src="/scripts/sender.js" defer></script>
+   <title>Send file - Print From Web</title>
+</head>
+<body>
+   <nav class="centered-content" style="grid-row: 1;">
+      <h2>Print From Web</h2>
+   </nav>
+   <main style="grid-row: 2;">
+      <div id="options">
+         <button id="btn_sender">Connect as Sender</button>
+         <div id="fileSend" class="action" hidden>
+            <input id="pdf" type="file" name="file" accept="application/pdf">
+            <button id="btn_sendFile">Send File</button>
+         </div>
+      </div>
+      <div id="output">
+         <div>
+            <p>Welcome</p>
+         </div>
+      </div>
+   </main>
+</body>
+</html>
