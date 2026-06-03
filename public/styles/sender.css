@@ -1,0 +1,36 @@
+main {
+   display: grid;
+   grid-template-rows: 2fr 5fr;
+   place-items: center;
+}
+
+#options {
+   height: 100%;
+   width: 200pt;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+#fileSend {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 20pt;
+}
+
+input[type="file"] {
+   font-size: 12pt;
+}
+
+input[type="file"]::file-selector-button {
+   box-sizing: border-box;
+   padding: 5pt 15pt;
+   font-size: large;
+   color: var(--accent1);
+   background-color: transparent;
+   border: 1px solid var(--accent1);
+   border-radius: 10pt;
+   cursor: pointer;
+}

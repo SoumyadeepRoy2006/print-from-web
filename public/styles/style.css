@@ -1,0 +1,73 @@
+:root {
+   --accent1: hsl(from darkred h s 35);
+   --accent2: hsl(from darkred h 15 96);
+}
+
+body {
+   margin: 0;
+   height: 100dvh;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 20mm calc(95dvh - 20mm);
+   row-gap: 10pt;
+   font-family: sans-serif, 'Segoe UI';
+   font-size: 5mm;
+   background-color: var(--accent2);
+}
+
+.centered-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.hidden {
+   display: none;
+}
+
+nav {
+   background-color: var(--accent1);
+   color: whitesmoke;
+}
+
+button {
+   box-sizing: border-box;
+   padding: 5pt;
+   width: 100%;
+   font-size: 6mm;
+   font-weight: bold;
+   color: var(--accent1);
+   background-color: transparent;
+   border: 0.5mm solid var(--accent1);
+   border-radius: 20px;
+   cursor: pointer;
+}
+
+#output {
+   width: 90%;
+   height: 80%;
+   box-sizing: border-box;
+   padding: 8pt 13pt;
+   overflow-y: scroll;
+   color: white;
+   background-color: #0a0a0a;
+   border-radius: 5pt;
+}
+#output::-webkit-scrollbar{
+   display: none;
+}
+#output > div {
+   width: 100%;
+   display: flex;
+   flex-direction: column-reverse;
+   font-family: monospace;
+   font-size: 11pt;
+   font-weight: 600;
+}
+#output > div > p {
+   margin: 2mm 0;
+}
+
+[hidden] {
+   display: none !important;
+}

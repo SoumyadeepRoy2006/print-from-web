@@ -1,0 +1,27 @@
+main {
+   display: grid;
+   grid-template-rows: 2fr 5fr;
+   place-items: center;
+}
+
+#options {
+   height: 100%;
+   width: 200pt;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+input {
+   box-sizing: border-box;
+   width: 100%;
+   padding: 10pt 15pt;
+   font-size: 12pt;
+   border: 0.5mm solid var(--accent1);
+   border-radius: 20pt;
+   color: var(--accent1);
+}
+input:focus {
+   outline: none;
+}
