@@ -1,0 +1,21 @@
+{
+	"name": "print-from-web",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "npm ci; npm audit fix",
+		"start": "node index.js",
+		"test": "nodemon index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {
+		"ejs": "^5.0.1",
+		"express": "^5.2.1",
+		"https": "^1.0.0",
+		"ws": "^8.19.0"
+	}
+}
