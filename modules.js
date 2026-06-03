@@ -24,7 +24,7 @@ module.exports = {
                console.log(`Server running on port ${port}`);
             });
          } else {
-            this.http.listen(process.env.port, () => {
+            this.http.listen(process.env.PORT, () => {
                console.log(`Server live and running`);
             });
          }
