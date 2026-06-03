@@ -132,6 +132,9 @@ WSServer.on("connection", (client) => {
             try {
                transferConnection.sender.send(JSON.stringify({type: "ReceiverDisconnected"}))
             } catch {}
+            try {
+               transferConnection.receiver = null;
+            } catch {}
             break;
 
          default:
