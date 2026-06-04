@@ -21,7 +21,7 @@ window.onload = () => {
    });
 
    server.onopen = () => {
-      Log("Connected to server");
+      Log("Connected to hosting server");
    }
 
    server.onmessage = (event) => {
