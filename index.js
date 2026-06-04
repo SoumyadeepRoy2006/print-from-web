@@ -6,9 +6,9 @@ const WSServer = new server.wsocket.Server({ server:server.http, path:"/" });
 const TransferConnectionGroup = [];
 
 WSServer.on("connection", (client) => {
-   console.log("Client connected");
    var transferConnection;
    var clientType = undefined;
+   var transferInProgress = false;
 
    client.on("message", (incomingData, binary) => {
       if (!binary) {
@@ -49,19 +49,16 @@ WSServer.on("connection", (client) => {
                break;
 
             case "DoneSend":
-               if (transferConnection) {
-                  if (transferConnection.receiver) {
-                     try {
-                        transferConnection.receiver.send(JSON.stringify({type: "DoneSend"}));
-                     } catch {}
-                  } else {
-                     try {
-                        client.send(JSON.stringify({type: "Message", message: "Connection lost with receiver"}));
-                     } catch {}
-                  }
+               transferInProgress = false;
+               if (transferConnection.receiver) {
+                  try {
+                     transferConnection.receiver.send(JSON.stringify({type: "DoneSend"}));
+                     console.log("A transfer was successful");
+                  } catch {}
                } else {
                   try {
-                     client.send(JSON.stringify({type: "Message", message: "Failed to finish the transfer process"}));
+                     client.send(JSON.stringify({type: "Message", message: "Connection lost with receiver"}));
+                     console.log("Failed to finish the transfer process due to receiver disconnecting at the last moment");
                   } catch {}
                }
                break;
@@ -106,9 +103,15 @@ WSServer.on("connection", (client) => {
       } else {
          try {
             if (transferConnection.receiver) {
+               if (!transferInProgress) {
+                  transferInProgress = true;
+                  console.log("A transfer is in progress...");
+               }
                transferConnection.receiver.send(incomingData);
             } else {
+               transferInProgress = false;
                client.send(JSON.stringify({type: "ReceiverDisconnected"}));
+               console.log("A transfer was failed due to receiver disconnection");
             }
          } catch {}
       }
@@ -122,6 +125,10 @@ WSServer.on("connection", (client) => {
                   try {
                      transferConnection.RemoveReceiver(reason="SenderDisconnected");
                   } catch {}
+                  if (transferInProgress) {
+                     transferInProgress = false;
+                     console.log("A transfer was failed due to sender disconnection");
+                  }
                }
                TransferConnectionGroup.splice(TransferConnectionGroup.indexOf(transferConnection), 1);
                transferConnection = null;
@@ -130,17 +137,18 @@ WSServer.on("connection", (client) => {
 
          case "receiver":
             try {
-               transferConnection.sender.send(JSON.stringify({type: "ReceiverDisconnected"}))
+               transferConnection.sender.send(JSON.stringify({type: "ReceiverDisconnected"}));
             } catch {}
-            try {
-               transferConnection.receiver = null;
-            } catch {}
+            transferConnection.receiver = null;
+            if (transferInProgress) {
+               transferInProgress = false;
+               console.log("A transfer was failed due to receiver disconnection");
+            }
             break;
 
          default:
             break;
       }
-      console.log("Client disconnected");
    });
 });
 server.Start();
