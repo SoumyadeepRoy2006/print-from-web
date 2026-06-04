@@ -85,7 +85,9 @@ WSServer.on("connection", (client) => {
                      } catch {}
                   }
                } else {
-                  client.send(JSON.stringify({type: "NoConnection"}));
+                  try {
+                     client.send(JSON.stringify({type: "NoConnection"}));
+                  } catch {}
                }
                break;
 
@@ -110,7 +112,9 @@ WSServer.on("connection", (client) => {
                transferConnection.receiver.send(incomingData);
             } else {
                transferInProgress = false;
-               client.send(JSON.stringify({type: "ReceiverDisconnected"}));
+               try {
+                  client.send(JSON.stringify({type: "ReceiverDisconnected"}));
+               } catch {}
                console.log("A transfer was failed due to receiver disconnection");
             }
          } catch {}
