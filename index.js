@@ -6,7 +6,6 @@ const WSServer = new server.wsocket.Server({ server:server.http, path:"/" });
 const TransferConnectionGroup = [];
 
 WSServer.on("connection", (client) => {
-   console.log("Client connected");
    var transferConnection;
    var clientType = undefined;
 
@@ -53,6 +52,7 @@ WSServer.on("connection", (client) => {
                   if (transferConnection.receiver) {
                      try {
                         transferConnection.receiver.send(JSON.stringify({type: "DoneSend"}));
+                        console.log("A transfer was successful");
                      } catch {}
                   } else {
                      try {
@@ -109,6 +109,7 @@ WSServer.on("connection", (client) => {
                transferConnection.receiver.send(incomingData);
             } else {
                client.send(JSON.stringify({type: "ReceiverDisconnected"}));
+               console.log("A transfer failed due to receiver disconnection");
             }
          } catch {}
       }
@@ -140,7 +141,6 @@ WSServer.on("connection", (client) => {
          default:
             break;
       }
-      console.log("Client disconnected");
    });
 });
 server.Start(2000);
