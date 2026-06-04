@@ -16,6 +16,9 @@ module.exports = {
          this.exp.get("/receive", (_, res) => {
             res.render("receiver.ejs");
          });
+         this.exp.get("/test", (_, res) => {
+            res.status(200).send("[OK]");
+         })
       }
 
       Start = (port=undefined) => {
