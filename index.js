@@ -64,8 +64,22 @@ WSServer.on("connection", (client) => {
                break;
 
             case "JoinConnection":
+               if (transferConnection) {
+                  try {
+                     client.send(JSON.stringify({type: "Message", message: "You will be disconnected from current connection"}));
+                  } catch {}
+                  try {
+                     transferConnection.sender.send(JSON.stringify({type: "ReceiverDisconnected"}));
+                  } catch {}
+                  if (transferInProgress) {
+                     transferInProgress = false;
+                     console.log("A transfer was failed due to receiver disconnection");
+                  }
+                  transferConnection.receiver = null;
+                  transferConnection = null;
+               }
                transferConnection = TransferConnectionGroup.find(x => x.connectionID == incomingData.connectionID);
-               if (transferConnection){
+               if (transferConnection) {
                   if (transferConnection.receiver) {
                      try {
                         if (transferConnection.receiver == client) {
