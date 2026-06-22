@@ -138,3 +138,6 @@ dist
 # VS / VS Code workspace config
 .vs/
 .vscode/
+
+# Others
+ignore/
