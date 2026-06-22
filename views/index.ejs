@@ -67,7 +67,7 @@
          document.querySelectorAll("span#current-year").forEach(span => {
             span.textContent = new Date().getFullYear();
          });
-         const server = new WebSocket(`ws://${location.host}`);
+         const server = new WebSocket(`wss://${location.host}`);
          server.onmessage = (event) => {
             const message = JSON.parse(event.data)
             successfulTransferText.textContent = message.value;
