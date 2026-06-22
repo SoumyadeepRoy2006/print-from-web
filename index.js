@@ -12,11 +12,20 @@ const schema = "main";
 const table = "PFW total transfers";
 var successfulTransfers = 0;
 
+function Broadcast() {
+   WSServer.clients.forEach(client => {
+      try {
+         client.send(JSON.stringify({type: "SuccessfulTransfers", value: successfulTransfers}));
+      } catch {}
+   })
+}
+
 WSServer.on("connection", (client) => {
    var transferConnection;
    var clientType = undefined;
    var transferInProgress = false;
 
+   Broadcast();
    client.on("message", (incomingData, binary) => {
       if (!binary) {
          incomingData = JSON.parse(incomingData);
@@ -62,6 +71,7 @@ WSServer.on("connection", (client) => {
                      transferConnection.receiver.send(JSON.stringify({type: "DoneSend"}));
                      successfulTransfers++;
                      console.log("A transfer was successful");
+                     Broadcast();
                   } catch {}
                } else {
                   try {
