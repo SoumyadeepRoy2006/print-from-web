@@ -1,9 +1,16 @@
 const { HostingServer, TransferConnection } = require("./modules.js");
 const { RandomID } = require("./modules.js");
+const { Pool } = require("pg");
 const server = new HostingServer();
 
 const WSServer = new server.wsocket.Server({ server:server.http, path:"/" });
 const TransferConnectionGroup = [];
+
+const database_address = JSON.parse(require("fs").readFileSync("database.json", "utf8"));
+const database_server = new Pool(database_address);
+const schema = "main";
+const table = "PFW total transfers";
+var successfulTransfers = 0;
 
 WSServer.on("connection", (client) => {
    var transferConnection;
@@ -53,6 +60,7 @@ WSServer.on("connection", (client) => {
                if (transferConnection.receiver) {
                   try {
                      transferConnection.receiver.send(JSON.stringify({type: "DoneSend"}));
+                     successfulTransfers++;
                      console.log("A transfer was successful");
                   } catch {}
                } else {
@@ -169,4 +177,19 @@ WSServer.on("connection", (client) => {
       }
    });
 });
+function UpdateDatabase() {
+   try {
+      database_server.query(`update "${schema}"."${table}" set "value" = $1`, [successfulTransfers]);
+      console.log("Database refeshed")
+      setTimeout(UpdateDatabase, process.env.dbRefreshInMinutes * 60000);
+   } catch {
+      console.log("Error during database update");
+      UpdateDatabase();
+   }
+};
+(async () => {
+   const result = await database_server.query(`select "value" from "${schema}"."${table}" limit 1`);
+   successfulTransfers = result.rows[0].value;
+   setTimeout(UpdateDatabase, process.env.dbRefreshInMinutes * 60000);
+})();
 server.Start();
