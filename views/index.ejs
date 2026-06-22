@@ -61,6 +61,19 @@
       ]
    }
    </script>
+   <script>
+      window.onload = () => {
+         const successfulTransferText = document.getElementById("transferred-files");
+         document.querySelectorAll("span#current-year").forEach(span => {
+            span.textContent = new Date().getFullYear();
+         });
+         const server = new WebSocket(`ws://${location.host}`);
+         server.onmessage = (event) => {
+            const message = JSON.parse(event.data)
+            successfulTransferText.textContent = message.value;
+         }
+      }
+   </script>
    <title>Print from your phone online - Print From Web</title>
 </head>
 <body>
@@ -68,10 +81,26 @@
       <h2>Print From Web</h2>
    </nav>
    <main class="centered-content" style="grid-row: 2;">
-      <div id="options">
+      <div id="introduction" style="width: 100%;">
+         <p>I made this page because I don't have a network printer and dont want to transfer from phone to pc and then delete them after printing. I believe many out there, who nor use WhatsApp(or other platform) in pc and neither have a wireless printer, share this specific problem.</p>
+         <p>So I came up with this idea to transfer the file over network to another pc and opening it in browser, so you can print it right away, with the option to save it still available.</p>
+      </div>
+      <div id="options" style="grid-row: 2;">
          <a href="/send"><button>Send</button></a>
          <a href="/receive"><button>Receive</button></a>
       </div>
+      <div class="centered-content" style="flex-direction: column; grid-row: 3;">
+         <p style="font-weight: 500;">Total files transferred online:</p>
+         <p id="transferred-files" style="color: var(--accent1);">1</p>
+      </div>
    </main>
+   <footer class="centered-content" style="grid-row: 3;">
+      <div>
+         <p>© <span id="current-year">2026</span> Soumyadeep Roy. All Rights Reserved.</p>
+      </div>
+      <div>
+         <p>Check project: <a target="_blank" rel="noopener" href="https://github.com/SoumyadeepRoy2006/print-from-web/tree/dev/">here</a></p>
+      </div>
+   </footer>
 </body>
 </html>
