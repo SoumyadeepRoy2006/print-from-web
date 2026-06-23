@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="256"
-   height="128"
-   viewBox="0 0 67.733326 33.866663"
+   width="1200"
+   height="630"
+   viewBox="0 0 317.49997 166.68748"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="3.2819023"
-     inkscape:cx="66.881941"
-     inkscape:cy="-4.4181692"
+     inkscape:zoom="0.29008192"
+     inkscape:cx="-239.58749"
+     inkscape:cy="229.24559"
      inkscape:window-width="1920"
      inkscape:window-height="1177"
      inkscape:window-x="-8"
@@ -57,16 +57,16 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;stroke-width:0.197843;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:8.3"
+       style="fill:#ffffff;stroke-width:0.950292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:8.3"
        id="rect1"
-       width="67.73333"
-       height="33.866665"
+       width="317.5"
+       height="166.6875"
        x="0"
        y="7.1850803e-07" />
     <g
        id="g1"
        inkscape:label="Printer"
-       transform="matrix(0.80178013,0,0,0.80178013,37.674235,0.27470731)">
+       transform="matrix(3.7583446,0,0,3.9462618,176.59799,1.3520723)">
       <g
          id="g12"
          inkscape:label="Custom Rect"
@@ -190,7 +190,7 @@
     <g
        id="g6-1"
        inkscape:label="Phone"
-       transform="matrix(-0.80178013,0,0,0.80178013,24.837607,0.15613891)">
+       transform="matrix(-3.7583446,0,0,3.9462618,116.42629,0.76849342)">
       <rect
          style="fill:#b30000;fill-opacity:1;stroke:#ffffff;stroke-width:0.389387;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:8.3;stroke-dasharray:none;stroke-opacity:1"
          id="rect2-1"
@@ -211,7 +211,7 @@
     <g
        id="g9"
        inkscape:label="Web"
-       transform="translate(-0.77179297,-3.1923453)">
+       transform="matrix(4.6875002,0,0,4.9218753,-3.6177797,-15.712328)">
       <circle
          style="fill:#ffffff;stroke:#b30000;stroke-width:0.301592;stroke-linecap:round;stroke-miterlimit:8.3"
          id="path1"
@@ -256,28 +256,29 @@
          id="path9" />
     </g>
     <path
-       style="fill:#ffffff;stroke:#b30000;stroke-width:0.27014;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
-       d="m 17.228803,13.213299 h 1.735448 v -0.893656 l 2.344284,1.321056 -2.292477,1.515329 v -0.906607 h -1.787255 z"
+       style="fill:#ffffff;stroke:#b30000;stroke-width:1.29755;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
+       d="m 80.760018,65.034207 h 8.134913 v -4.398464 l 10.988832,6.502073 -10.745986,7.45826 V 70.13387 h -8.377759 z"
        id="path10"
        sodipodi:nodetypes="cccccccc"
        inkscape:label="Arrow" />
     <path
-       style="fill:#ffffff;stroke:#b30000;stroke-width:0.27014;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
-       d="m 36.496887,13.213299 h 1.735448 v -0.893656 l 2.344284,1.321056 -2.292477,1.515329 v -0.906607 h -1.787255 z"
+       style="fill:#ffffff;stroke:#b30000;stroke-width:1.29755;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
+       d="m 171.07917,65.034207 h 8.13491 v -4.398464 l 10.98883,6.502073 -10.74598,7.45826 V 70.13387 h -8.37776 z"
        id="path11"
        sodipodi:nodetypes="cccccccc"
        inkscape:label="Arrow" />
     <text
        xml:space="preserve"
-       style="font-size:8.73125px;font-family:Gabriola;-inkscape-font-specification:'Gabriola, Normal';writing-mode:lr-tb;direction:ltr;fill:#b30000;fill-opacity:1;stroke:#b30000;stroke-width:0.27014;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
-       x="12.391331"
-       y="28.275059"
+       style="font-size:41.9384px;font-family:Gabriola;-inkscape-font-specification:'Gabriola, Normal';writing-mode:lr-tb;direction:ltr;fill:#b30000;fill-opacity:1;stroke:#b30000;stroke-width:1.29755;stroke-linecap:round;stroke-miterlimit:8.3;stroke-dasharray:none"
+       x="59.518764"
+       y="135.81241"
        id="text11"
-       inkscape:label="Title"><tspan
+       inkscape:label="Title"
+       transform="scale(0.97590008,1.0246951)"><tspan
          sodipodi:role="line"
          id="tspan11"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:5.29167px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#b30000;fill-opacity:1;stroke:none;stroke-width:0.27014;stroke-dasharray:none"
-         x="12.391331"
-         y="28.275059">Print From Web</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25.4173px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#b30000;fill-opacity:1;stroke:none;stroke-width:1.29755;stroke-dasharray:none"
+         x="59.518764"
+         y="135.81241">Print From Web</tspan></text>
   </g>
 </svg>
