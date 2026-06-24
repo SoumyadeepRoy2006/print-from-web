@@ -6,7 +6,12 @@ main {
 }
 
 p {
-   font-size: smaller;
+   font-size: small;
+}
+
+ul {
+   font-size: small;
+   padding-left: 1em;
 }
 
 :not(div[id="introduction"]) > p {
@@ -19,8 +24,15 @@ button {
 }
 
 #introduction {
+   width: 100%;
    box-sizing: border-box;
    padding: 0 20pt;
+}
+#introduction > h2 {
+   color: var(--accent1);
+}
+#introduction > hr {
+   color: var(--accent1);
 }
 
 #options {
