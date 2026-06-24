@@ -23,6 +23,14 @@ body {
    display: none;
 }
 
+h1 {
+   font-size: 1.5em;
+}
+
+h2 {
+   font-size: 1.2em;
+}
+
 nav {
    background-color: var(--accent1);
    color: whitesmoke;
@@ -72,6 +80,10 @@ button:hover {
 }
 #output > div > p {
    margin: 2mm 0;
+}
+
+#transferred-files-count {
+   color: var(--accent1);
 }
 
 [hidden] {

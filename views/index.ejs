@@ -87,21 +87,33 @@
    <title>Print from your phone online - Print From Web</title>
 </head>
 <body>
-   <nav class="centered-content" style="grid-row: 1;">
-      <h2>Print From Web</h2>
+   <nav class="centered-content">
+      <h1>Print From Web</h1>
    </nav>
-   <main class="centered-content" style="grid-row: 2;">
-      <div id="introduction" style="width: 100%;">
-         <p>I made this page because I don't have a network printer and dont want to transfer from phone to pc and then delete them after printing. I believe many out there, who nor use WhatsApp(or other platform) in pc and neither have a wireless printer, share this specific problem.</p>
-         <p>So I came up with this idea to transfer the file over network to another pc and opening it in browser, so you can print it right away, with the option to save it still available.</p>
+   <main class="centered-content">
+      <div id="introduction">
+         <h2>Web based tool for file transfer + print:</h2>
+         <hr>
+         <p>Print from Web is a web based tool, through which you can transfer a document to another device and get the file opened in the receiver's browser, ready to print. This tool is very useful to you if your printer is not a network printer and you don't use any application for file sharing, and neither a compatible usb cable. Also useful if you want to send a document to someone else who can print it for you without them having to save it in their device.</p>
+         <p>How did I get this idea? Well, I have all of the problems I just mentioned.</p>
+         <p>Works well enough to transfer PDFs, another good thing is that the files aren't stored anywhere in the server side.</p>
+         <h2>Get started:</h2>
+         <hr>
+         <p>
+            <ul>
+               <li>First, the sender needs to create a connection ID for the transfer first.</li>
+               <li>Then, the receiver can join the connection with the ID.</li>
+               <li>Once the receiver joins, the sender can select the file and send it.</li>
+            </ul>
+         </p>
       </div>
-      <div id="options" style="grid-row: 2;">
+      <div id="options">
          <a href="/send"><button>Send</button></a>
          <a href="/receive"><button>Receive</button></a>
       </div>
-      <div class="centered-content" style="flex-direction: column; grid-row: 3;">
+      <div class="centered-content" style="flex-direction: column;">
          <p style="font-weight: 500;">Total files transferred online:</p>
-         <p id="transferred-files" style="color: var(--accent1);"></p>
+         <p id="transferred-files-count"></p>
       </div>
    </main>
    <footer class="centered-content" style="grid-row: 3;">
