@@ -22,12 +22,11 @@
    <title>Print from your phone online</title>
 </head>
 <body>
-   <nav class="centered-content">
-      <h1>Print From Web</h1>
-   </nav>
+   
+   <%- include("partials/navbar", { privacy: false }) %>
    <main class="centered-content">
       <div id="introduction">
-         <h2>Web based tool for file transfer + print:</h2>
+         <h1>Web based tool for file transfer + print:</h1>
          <hr>
          <p>Print from Web is a web based tool, through which you can transfer a document to another device and get the file opened in the receiver's browser, ready to print. This tool is very useful to you if your printer is not a network printer and you don't use any application for file sharing, and neither a compatible usb cable. Also useful if you want to send a document to someone else who can print it for you without them having to save it in their device.</p>
          <p>How did I get this idea? Well, I have all of the problems I just mentioned.</p>
@@ -47,17 +46,37 @@
          <a href="/receive"><button>Receive</button></a>
       </div>
       <div class="centered-content" style="flex-direction: column;">
-         <p style="font-weight: 500;">Total files transferred online:</p>
+         <p>Total files transferred online:</p>
          <p id="transferred-files-count"></p>
       </div>
+      <div id="how-to-use">
+         <h2>How to use:</h2>
+         <hr>
+         <ol>
+            <li>
+               <p>First click on "Connect as Sender", (or ask the sender to connect).</p>
+            </li>
+            <li>
+               <p>In the next page, sender has to create a connection, a room ID is given to sender.</p>
+            </li>
+            <li>
+               <p>Sender shares the room ID with receiver.</p>
+            </li>
+            <li>
+               <p>Receiver has to choose "Connect as Receiver" in the home page:</p>
+            </li>
+            <li>
+               <p>In the next page, type the room ID in the input box and press connect button to connect to sender.</p>
+            </li>
+            <li>
+               <p>Sender can now select files and send it.</p>
+            </li>
+            <li>
+               <p>If receiver cannot see the popup, they can open popup menu and click on the blob link to the document.</p>
+            </li>
+         </ol>
+      </div>
    </main>
-   <footer class="centered-content" style="grid-row: 3;">
-      <div>
-         <p>© <span id="current-year">2026</span> Soumyadeep Roy. All Rights Reserved.</p>
-      </div>
-      <div>
-         <p>Check project: <a target="_blank" rel="noopener" href="https://github.com/SoumyadeepRoy2006/print-from-web/tree/dev/">here</a></p>
-      </div>
-   </footer>
+   <%- include("partials/footer") %>
 </body>
 </html>
