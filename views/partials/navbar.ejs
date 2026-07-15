@@ -1,0 +1,26 @@
+<nav>
+   <a id="home-logo" href="/">
+      <img src="/favicon.svg" alt="Logo image">
+      <h1>Print From Web</h1>
+   </a>
+   <div id="links">
+      <a target="_blank" rel="noopener" href="https://github.com/SoumyadeepRoy2006/print-from-web/tree/dev/">
+         <button>
+            Source code
+         </button>
+         <div class="link-button-bar centered-content">
+            <div class="link-button-bar-fill"></div>
+         </div>
+      </a>
+      <% if (!privacy) { %>
+      <a href="/privacy">
+            <button>
+               Privacy policy
+            </button>
+            <div class="link-button-bar centered-content">
+               <div class="link-button-bar-fill"></div>
+            </div>
+         </a>
+      <% } %>
+   </div>
+</nav>

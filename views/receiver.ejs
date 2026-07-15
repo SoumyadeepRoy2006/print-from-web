@@ -66,9 +66,7 @@
    <title>Receive file - Print Form Web</title>
 </head>
 <body>
-   <nav class="centered-content" style="grid-row: 1;">
-      <h1>Print From Web</h1>
-   </nav>
+   <%- include("partials/navbar", { privacy: false }) %>
    <main style="grid-row: 2;">
       <div id="options">
          <input name="connectionID" type="text" placeholder="Connection ID">
@@ -80,5 +78,6 @@
          </div>
       </div>
    </main>
+   <%- include("partials/footer") %>
 </body>
 </html>

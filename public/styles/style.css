@@ -31,9 +31,21 @@ h2 {
    font-size: 1.2em;
 }
 
+h3 {
+   font-size: 0.9em;
+}
+
 nav {
+   display: grid;
+   grid-template-rows: 100%;
+   grid-template-columns: repeat(2, 1fr);
+   place-items: center;
    background-color: var(--accent1);
    color: whitesmoke;
+}
+nav a {
+   color: inherit;
+   text-decoration: none;
 }
 
 button {
@@ -52,9 +64,61 @@ button {
       background-color 200ms ease-out;
 }
 
-button:hover {
+button:not(#links button):hover {
    color: whitesmoke;
    background-color: var(--accent1);
+}
+
+.link-button-bar {
+   width: 100%;
+   height: 100%;
+}
+
+.link-button-bar-fill {
+   width: 0%;
+   height: 100%;
+   background-color: whitesmoke;
+   border-radius: 0.2mm;
+   transition: width 50ms ease-out;
+}
+
+#home-logo {
+   height: 100%;
+   padding: 0 10px;
+   justify-self: start;
+   display: inline-flex;
+   align-items: center;
+   text-decoration: none;
+}
+
+#home-logo > img {
+   height: 1.5em;
+}
+
+#links {
+   height: 80%;
+   width: 100%;
+   padding: 0 20pt;
+   justify-self: end;
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+}
+
+#links > a {
+   height: 100%;
+   display: grid;
+   grid-template-rows: 1fr 1mm;
+}
+#links > a:hover > .link-button-bar > .link-button-bar-fill {
+   width: 100%;
+}
+
+#links > a > button {
+   padding: 0 5pt;
+   font-size: 0.75em;
+   color: white;
+   border: none;
 }
 
 #output {
@@ -97,9 +161,13 @@ footer {
 }
 footer > div > p {
    margin: 0;
+   font-size: small;
 }
 footer > div > p > a {
    font-weight: 800;
    color: dodgerblue;
 }
 
+.click-copy {
+   cursor: pointer;
+}

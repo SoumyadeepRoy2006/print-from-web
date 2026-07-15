@@ -66,12 +66,10 @@
    <title>Send file - Print From Web</title>
 </head>
 <body>
-   <nav class="centered-content" style="grid-row: 1;">
-      <h1>Print From Web</h1>
-   </nav>
+   <%- include("partials/navbar", { privacy: false }) %>
    <main style="grid-row: 2;">
       <div id="options">
-         <button id="btn_sender">Connect as Sender</button>
+         <button id="btn_sender">Create Connection</button>
          <div id="fileSend" class="action" hidden>
             <input id="pdf" type="file" name="file" accept="application/pdf">
             <button id="btn_sendFile">Send File</button>
@@ -83,5 +81,6 @@
          </div>
       </div>
    </main>
+   <%- include("partials/footer") %>
 </body>
 </html>
